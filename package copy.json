@@ -6,20 +6,14 @@
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
-    "test": "gulp test",
-    "preinstall": "npx npm-force-resolutions"
-  },
-  "resolutions": {
-    "typescript": "3.6.4"
+    "test": "gulp test"
   },
   "dependencies": {
     "@microsoft/sp-core-library": "~1.4.0",
     "@microsoft/sp-lodash-subset": "~1.4.0",
     "@microsoft/sp-office-ui-fabric-core": "~1.4.0",
     "@microsoft/sp-webpart-base": "~1.4.0",
-    "@pnp/sp": "^2.0.9",
-    "npm-force-resolutions": "0.0.10",
-    "typescript": "^3.6.4"
+    "@pnp/sp": "^2.0.9"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.4.1",
