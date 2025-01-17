@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "clickability-client-side-solution",
+    "id": "9dc8b067-2e47-4b71-a8d0-7bc6920469b2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/clickability.sppkg"
+  }
+}
