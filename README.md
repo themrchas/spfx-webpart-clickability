@@ -5,6 +5,8 @@
 npm install @pnp/sp@2.0.9 and upgraded typescript
 used https://pnp.github.io/pnpjs/v2/SPFx-on-premises/  Alternative using npm-force-resolutions
 
+pnp.github.io/pnpjs/v2/sp/lists
+
 > Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
