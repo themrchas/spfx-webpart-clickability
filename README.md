@@ -3,7 +3,7 @@
 ## Summary
 
 npm install @pnp/sp@2.0.9 and upgraded typescript
-used https://pnp.github.io/pnpjs/v2/SPFx-on-premises/  Alternative using npm-force-resolutions
+used https://pnp.github.io/pnpjs/v2/SPFx-on-premises/  Alternative using npm-force-resolutions to upgrade typescript
 
 pnp.github.io/pnpjs/v2/sp/lists
 
