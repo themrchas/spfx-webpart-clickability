@@ -14,6 +14,7 @@ import "@pnp/sp/webs";
 
 import styles from './ClickabilityWebPartWebPart.module.scss';
 import * as strings from 'ClickabilityWebPartWebPartStrings';
+import { IListInfo } from '@pnp/sp/lists';
 
 export interface IClickabilityWebPartWebPartProps {
   description: string;
@@ -49,21 +50,55 @@ export default class ClickabilityWebPartWebPart extends BaseClientSideWebPart<IC
 
       console.log("web return is ",data);
 
-      this.domElement.innerHTML += `Web site title is ${data.Title}`
+      this.domElement.innerHTML += `<h2>Current web is ${data.Title}</h2>`
+
+      this.getListNames().then( (data) =>{
+       
+        this.domElement.innerHTML += data;
+
+      })
+
 
     })
 
     this.getListNames();
+    
 
     
   }
 
-  private async getListNames()  {
+  private async getListNames(): Promise<string> {
+
+    //Array consisting of Document Library names in the web
+    const documentLibraryNames: string[] = [];
+
+    console.log("sp.web is",sp.web);
 
     let lists = await sp.web.lists();
-    
+   // let docLibsRaw: IListInfo = await sp.web.lists.filter("BaseType eq 1").get();
+   let docLibsRaw: IListInfo[] = await sp.web.lists.filter("BaseType eq 1").select("Title").get();
 
-    console.log('lists',lists)
+   console.log("docLibsRaw has type ",typeof docLibsRaw);
+    
+    console.log('lists',lists);
+
+
+    console.log("doc lib information", docLibsRaw);
+
+    let docLibTitles: string = "<h3>The Document Libraries on this site are below</h3>"
+
+    //Create a unordered list of document library titles
+    docLibTitles += docLibsRaw.reduce( (acc,item) => {
+
+      return `${acc}<li>${item.Title}</li>`
+
+    },"<h4><ul>") + "</ul></h4>"
+
+    return Promise.resolve(docLibTitles)
+
+
+
+
 
   }
 
